@@ -1,10 +1,32 @@
 import Link from "next/link";
 
+interface Props {
+  children: React.ReactNode;
+  className?: string;
+}
+
 const TitleStyle = 
-"absolute w-screen text-4xl font-bold \
-text-center top-1/2  -translate-y-1/2 \
+"absolute w-screen top-1/2 -translate-y-1/2 \
+text-center text-4xl font-bold \
 animate-rise \
 ";
+
+const SubtitleStyle = "flex flex-col justify-center animate-fade-in";
+
+const pageList = [
+  "Components",
+  "Algorithm",
+  "System",
+  "Game"
+];
+
+const VerticalCenterDiv = ({children, className}: Props) => {
+  return (
+    <div className={className + " " + SubtitleStyle}>
+      {children}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -13,24 +35,16 @@ export default function Home() {
       My Laboratory
     </div>
 
-    <div className="absolute z-1 w-screen h-screen text-xl text-center grid grid-cols-2">
-      <div>
-        <Link href="/components">
-          Components
-        </Link>
-      </div>
-
-      <div>
-        Algorithm
-      </div>
-
-      <div>
-        System
-      </div>
-
-      <div className="">
-        <s>Game</s>
-      </div>
+    <div className="absolute w-screen h-screen text-xl text-center grid grid-cols-2">
+      {
+        pageList.map((page) => (
+          <VerticalCenterDiv key={page} className="">
+            <Link href={`/${page.toLowerCase()}`} className="p-16 border">
+              {page}
+            </Link>
+          </VerticalCenterDiv>
+        ))
+      }
     </div>
     </>
   )

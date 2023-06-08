@@ -16,12 +16,17 @@ module.exports = {
         rise: {
           '0%': { transform: 'translateY(50%)', opacity: 0 },
           '100%': { transform: 'translateY(-50%)', opacity: 1 }
+        },
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 }
         }
       },
       animation: {
-        'rise': 'rise 0.5s ease-in'
+        'rise': 'rise 1s ease-in-out',
+        'fade-in': 'fade-in 1.5s ease-in'
       }
-    },
+    }
   },
-  plugins: [],
+  plugins: []
 }
