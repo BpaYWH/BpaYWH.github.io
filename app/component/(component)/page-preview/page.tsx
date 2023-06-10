@@ -1,15 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-type CustomLinkProps = {
+type PreviewLinkProps = {
     href: string,
     children: React.ReactNode
 }
 
-function CustomLink({ href, children }: CustomLinkProps) {
+function PreviewLink({ href, children }: PreviewLinkProps) {
   let [imagePreview, setImagePreview] = useState<string>("")
   let [isHovering, setIsHovering] = useState<boolean>(false)
   
@@ -86,15 +86,14 @@ function CustomLink({ href, children }: CustomLinkProps) {
   )
 }
 
-
-export default function pagePreview() {
+export default function PagePreview() {
 
   return (
     <div>
       <h1>Page Preview</h1>
-      <CustomLink href="http://localhost:3000/components/file-explorer">
+      <PreviewLink href="http://localhost:3000/component/file-explorer">
         File Explorer
-      </CustomLink>
+      </PreviewLink>
     </div>
   );
 

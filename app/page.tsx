@@ -14,7 +14,7 @@ animate-rise \
 const SubtitleStyle = "flex flex-col justify-center animate-fade-in";
 
 const pageList = [
-  "Components",
+  "Component",
   "Algorithm",
   "System",
   "Game"
