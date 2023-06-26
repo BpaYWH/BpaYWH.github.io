@@ -16,7 +16,7 @@ const SubtitleStyle = "flex flex-col justify-center animate-fade-in";
 const pageList = [
   "Component",
   "Algorithm",
-  "System",
+  "App",
   "Game"
 ];
 
