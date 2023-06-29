@@ -196,9 +196,9 @@ function ReverseLinkedList() {
           <label>
             Revesed List:
           </label>
-          {list.toReversed().map((item, id) => (
-            <Fragment key={`node-after-${id}`}>
-              <Node key={item} value={item} size={40} />
+          {list.map((_, id) => (
+            <Fragment key={`node-after-${list.length - 1 - id}`}>
+              <Node key={list[list.length - 1- id]} value={list[list.length - 1- id]} size={40} />
               {
                 id !== list.length - 1 &&
                 <Arrow size={28} />            
