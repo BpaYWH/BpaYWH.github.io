@@ -1,7 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Switch from '@/components/switch';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
+const styles = " grid grid-cols-3 h-screen px-4 py-8";
 
 export const metadata = {
   title: 'My Component Laboratory',
@@ -15,7 +17,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className + styles}>
+        <div className="flex flex-col justify-between border">
+          <div>
+            <h1 className="text-4xl font-bold text-center mb-4">My Laboratory</h1>
+            <p>
+              This is a place where I experiment with different ideas.
+            </p>
+          </div>
+
+          <Switch leftButton="About" rightButton="Contact" />
+        </div>
+        {children}
+      </body>
     </html>
   )
 }

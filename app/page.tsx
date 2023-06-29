@@ -1,67 +1,51 @@
-"use client"
-
 import Link from "next/link";
-import { Amplify } from "aws-amplify";
-import config from "./aws-exports";
 
-Amplify.configure(config);
+import Switch from "@/components/switch";
 
-import "@aws-amplify/ui-react/styles.css";
-import {
-  withAuthenticator,
-  Button,
-} from "@aws-amplify/ui-react";
+import { LabList, LabPageList } from "@/utils/config";
 
-interface DivProps {
-  children: React.ReactNode;
-  className?: string;
-}
 
-const TitleStyle = 
-"absolute w-screen top-1/2 -translate-y-1/2 \
-text-center text-4xl font-bold \
-animate-rise \
-";
-
-const SubtitleStyle = "flex flex-col justify-center animate-fade-in";
-
-const pageList = [
-  "Component",
-  "Algorithm",
-  "App",
-  "Game"
-];
-
-const VerticalCenterDiv = ({children, className}: DivProps) => {
+function Home() {
+  
   return (
-    <div className={className + " " + SubtitleStyle}>
-      {children}
-    </div>
-  );
-}
+    <div className="col-span-2 flex flex-col justify-between border">
+      <div className="">
+        <h1 className="text-4xl font-bold mb-8">
+          Lab
+        </h1>
 
-function Home({ signOut }: any) {
-  return (
-    <>
-    <Button onClick={signOut}>Sign Out</Button>
+        {/* <div className="grid gap-4 grid-flow-col">
+          {
+            pageList.map((page) => (
+              <button key={page} className="px-16 py-8 shadow rounded-md hover:bg-gray-100 hover:-translate-y-1 hover:scale-105 transition">
+                <Link href={`/${page.toLowerCase()}`}>
+                  {page}
+                </Link>
+              </button>
+            ))
+          }
+        </div> */}
+        {
+          LabList.map((cat) => (
+            <div key={cat} className="mx-4 my-8">
+              <h1 className="text-2xl font-semibold pb-4 mb-8 border-b">{cat}</h1>
+              {
+                LabPageList[cat].map(({name, path}) => (
+                  <button key={`${cat}-${name}`} className="py-4 px-8 shadow rounded-md hover:bg-gray-100 hover:-translate-y-1 transition">
+                    <Link href={`/${cat.toLowerCase()}/${path}`}>
+                      {name}
+                    </Link>
+                  </button>
+                ))
+              }
+            </div>
+          ))
+        }
+      </div>
 
-    <div className={TitleStyle}>
-      My Laboratory
+      <Switch leftButton="Lab" rightButton="Work" />
     </div>
-
-    <div className="absolute w-screen h-screen text-xl text-center grid grid-cols-2">
-      {
-        pageList.map((page) => (
-          <VerticalCenterDiv key={page} className="">
-            <Link href={`/${page.toLowerCase()}`} className="p-16 border">
-              {page}
-            </Link>
-          </VerticalCenterDiv>
-        ))
-      }
-    </div>
-    </>
   )
 }
 
-export default withAuthenticator(Home);
+export default Home;
