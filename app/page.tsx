@@ -1,6 +1,18 @@
-import Link from "next/link";
+"use client"
 
-interface Props {
+import Link from "next/link";
+import { Amplify } from "aws-amplify";
+import config from "./aws-exports";
+
+Amplify.configure(config);
+
+import "@aws-amplify/ui-react/styles.css";
+import {
+  withAuthenticator,
+  Button,
+} from "@aws-amplify/ui-react";
+
+interface DivProps {
   children: React.ReactNode;
   className?: string;
 }
@@ -20,7 +32,7 @@ const pageList = [
   "Game"
 ];
 
-const VerticalCenterDiv = ({children, className}: Props) => {
+const VerticalCenterDiv = ({children, className}: DivProps) => {
   return (
     <div className={className + " " + SubtitleStyle}>
       {children}
@@ -28,9 +40,11 @@ const VerticalCenterDiv = ({children, className}: Props) => {
   );
 }
 
-export default function Home() {
+function Home({ signOut }: any) {
   return (
     <>
+    <Button onClick={signOut}>Sign Out</Button>
+
     <div className={TitleStyle}>
       My Laboratory
     </div>
@@ -49,3 +63,5 @@ export default function Home() {
     </>
   )
 }
+
+export default withAuthenticator(Home);
