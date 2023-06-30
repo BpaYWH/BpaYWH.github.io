@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Switch from '@/components/switch';
 
 const inter = Inter({ subsets: ['latin'] });
-const styles = " grid grid-cols-3 h-screen px-4 py-8";
+const styles = "flex h-screen px-4 py-8 gap-4 bg-gray-50";
 
 export const metadata = {
   title: 'My Component Laboratory',
@@ -17,8 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + styles}>
-        <div className="flex flex-col justify-between border">
+      <body className={inter.className + " " + styles}>
+        <div className="basis-1/3 flex flex-col justify-between p-4 h-full bg-white rounded-lg shadow">
           <div>
             <h1 className="text-4xl font-bold text-center mb-4">My Laboratory</h1>
             <p>

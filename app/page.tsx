@@ -1,49 +1,35 @@
-import Link from "next/link";
-
 import Switch from "@/components/switch";
+import Card from "@/components/card";
 
 import { LabList, LabPageList } from "@/utils/config";
-
 
 function Home() {
   
   return (
-    <div className="col-span-2 flex flex-col justify-between border">
-      <div className="">
+    <div id="WorkDiv" className="basis-2/3 px-4 pt-4 bg-white rounded-md shadow-lg overflow-auto">
+      <div id="WorkContent">
         <h1 className="text-4xl font-bold mb-8">
           Lab
         </h1>
-
-        {/* <div className="grid gap-4 grid-flow-col">
-          {
-            pageList.map((page) => (
-              <button key={page} className="px-16 py-8 shadow rounded-md hover:bg-gray-100 hover:-translate-y-1 hover:scale-105 transition">
-                <Link href={`/${page.toLowerCase()}`}>
-                  {page}
-                </Link>
-              </button>
-            ))
-          }
-        </div> */}
         {
           LabList.map((cat) => (
-            <div key={cat} className="mx-4 my-8">
-              <h1 className="text-2xl font-semibold pb-4 mb-8 border-b">{cat}</h1>
-              {
-                LabPageList[cat].map(({name, path}) => (
-                  <button key={`${cat}-${name}`} className="py-4 px-8 shadow rounded-md hover:bg-gray-100 hover:-translate-y-1 transition">
-                    <Link href={`/${cat.toLowerCase()}/${path}`}>
-                      {name}
-                    </Link>
-                  </button>
-                ))
-              }
+            <div id="WorkCategory" key={cat} className="mx-4 my-8">
+              <h1 className="text-3xl font-semibold mb-8">{cat}</h1>
+              <div id="WorkCard" className="grid gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
+                {
+                  LabPageList[cat].map(({name, path, description, image}) => (
+                    <Card id="Card" key={`${cat}-${name}`} path={`/${cat.toLowerCase()}/${path}`} title={name} description={description} image={image} />
+                  ))
+                }
+              </div>
             </div>
           ))
         }
       </div>
-
-      <Switch leftButton="Lab" rightButton="Work" />
+      <div id="SwitchDiv" className="sticky bottom-0 bg-white">
+        <Switch leftButton="Lab" rightButton="Work" />
+        <div className="h-4 bg-white" />
+      </div>
     </div>
   )
 }

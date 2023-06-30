@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 
-type Props = {
+interface Props extends React.HTMLAttributes<HTMLDivElement>{
    leftButton: string,
    rightButton: string
    className?: string
