@@ -6,10 +6,9 @@ import Lab from "@/components/homePage/Lab";
 import Work from "@/components/homePage/Work";
 import Switch from "@/components/general/switch";
 
-const isBrowser = typeof window !== "undefined";
-
 function Home() {
-  const container = document.getElementById("WorkDiv");
+  const [container, setContainer] = useState<HTMLElement | null>(null);
+
   const [showcase, setShowcase] = useState("Lab");
   const [showBackToTopBtn, setShowBackToTopBtn] = useState(false);
 
@@ -17,10 +16,12 @@ function Home() {
     if (!container) {
       return;
     }
+
     container.scrollTo({
       top: 0,
       behavior: "smooth"
     });
+
   };
 
   const handleScroll = () => {
@@ -36,15 +37,19 @@ function Home() {
   }
 
   useEffect(() => {
-    if (!isBrowser || !container) {
+    const newContainer = document.getElementById("WorkDiv");
+    if (typeof window !== "undefined") {
+      setContainer(newContainer);
+    }
+    if (!newContainer) {
       console.error("not browser or container")
       return;
     }
 
-    container.addEventListener("scroll", handleScroll);
+    newContainer.addEventListener("scroll", handleScroll);
 
     return () => {
-      container.removeEventListener("scroll", handleScroll);
+      newContainer.removeEventListener("scroll", handleScroll);
     }
   }, []);
 

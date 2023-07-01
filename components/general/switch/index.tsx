@@ -13,10 +13,10 @@ function Switch({ leftButton, rightButton, className = "", showcase, setShowcase
 
   return (
    <div className={`grid grid-cols-2 bg-gray-200 rounded-3xl relative ${className}`}>
-      <button onClick={() => setShowcase(leftButton)} className={`z-10 px-4 py-2 rounded-3xl ${showcase === leftButton ? "text-white" : ""}`}>
+      <button onClick={() => setShowcase(leftButton)} className={`z-10 px-4 py-2 rounded-3xl`}>
       {leftButton}
       </button>
-      <button onClick={() => setShowcase(rightButton)} className={`z-10 px-4 py-2 rounded-3xl ${showcase === rightButton ? "text-white" : ""}`}>
+      <button onClick={() => setShowcase(rightButton)} className={`z-10 px-4 py-2 rounded-3xl`}>
          {rightButton}
       </button>
    <div className={`shadow-md absolute bg-green-300 w-1/2 h-full rounded-full transition ${showcase === leftButton ? "translate-x-0" : "translate-x-full"}`} />
