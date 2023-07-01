@@ -1,35 +1,72 @@
-import Switch from "@/components/switch";
-import Card from "@/components/card";
+"use client"
 
-import { LabList, LabPageList } from "@/utils/config";
+import { useEffect, useState } from "react";
+
+import Lab from "@/components/homePage/Lab";
+import Work from "@/components/homePage/Work";
+import Switch from "@/components/general/switch";
+
+const isBrowser = typeof window !== "undefined";
 
 function Home() {
-  
+  const container = document.getElementById("WorkDiv");
+  const [showcase, setShowcase] = useState("Lab");
+  const [showBackToTopBtn, setShowBackToTopBtn] = useState(false);
+
+  const scrollToTop = () => {
+    if (!container) {
+      return;
+    }
+    container.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
+  const handleScroll = () => {
+    if (!container) {
+      return;
+    }
+    if (container.scrollTop > 300) {
+      setShowBackToTopBtn(true);
+    }
+    else {
+      setShowBackToTopBtn(false);
+    }
+  }
+
+  useEffect(() => {
+    if (!isBrowser || !container) {
+      console.error("not browser or container")
+      return;
+    }
+
+    container.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
   return (
-    <div id="WorkDiv" className="basis-2/3 px-4 pt-4 bg-white rounded-md shadow-lg overflow-auto">
-      <div id="WorkContent">
-        <h1 className="text-4xl font-bold mb-8">
-          Lab
-        </h1>
-        {
-          LabList.map((cat) => (
-            <div id="WorkCategory" key={cat} className="mx-4 my-8">
-              <h1 className="text-3xl font-semibold mb-8">{cat}</h1>
-              <div id="WorkCard" className="grid gap-4 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
-                {
-                  LabPageList[cat].map(({name, path, description, image}) => (
-                    <Card id="Card" key={`${cat}-${name}`} path={`/${cat.toLowerCase()}/${path}`} title={name} description={description} image={image} />
-                  ))
-                }
-              </div>
-            </div>
-          ))
-        }
-      </div>
+    <div id="WorkDiv" className="relative basis-2/3 flex flex-col justify-between px-4 pt-4 bg-white rounded-md shadow-lg overflow-y-scroll">
+      {
+        showcase === "Lab" &&
+        <Lab />
+      }
+      {
+        showcase === "Work" &&
+        <Work />
+      }
+
       <div id="SwitchDiv" className="sticky bottom-0 bg-white">
-        <Switch leftButton="Lab" rightButton="Work" />
+        <button className={`absolute w-[40px] h-[40px] right-0 bottom-16 bg-green-400 text-white rounded-full p-2 ${showBackToTopBtn ? "" : "hidden"} transition duration-200 hover:scale-[1.1] hover:shadow-lg`} onClick={scrollToTop}>
+          ▵
+        </button>
+        <Switch leftButton="Lab" rightButton="Work" showcase={showcase} setShowcase={setShowcase} />
         <div className="h-4 bg-white" />
       </div>
+      
     </div>
   )
 }

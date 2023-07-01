@@ -20,36 +20,6 @@ export const LabPageList: {[key: string]: TLabPage[]} = {
          description: "File Explorer",
          image: "/assets/image/file-explorer.jpg",
       },
-      {
-         name: "File Explorer",
-         path: "file-explorer",
-         description: "File Explorer",
-         image: "/assets/image/file-explorer.jpg",
-      },
-      {
-         name: "File Explorer",
-         path: "file-explorer",
-         description: "File Explorer",
-         image: "/assets/image/file-explorer.jpg",
-      },
-      {
-         name: "File Explorer",
-         path: "file-explorer",
-         description: "File Explorer",
-         image: "/assets/image/file-explorer.jpg",
-      },
-      {
-         name: "File Explorer",
-         path: "file-explorer",
-         description: "File Explorer",
-         image: "/assets/image/file-explorer.jpg",
-      },
-      {
-         name: "File Explorer",
-         path: "file-explorer",
-         description: "File Explorer",
-         image: "/assets/image/file-explorer.jpg",
-      },
    ],
    "Algorithm": [
       {
@@ -58,12 +28,6 @@ export const LabPageList: {[key: string]: TLabPage[]} = {
          description: "Reverse Linked List",
          image: "/assets/image/linked-list.jpg",
       },
-      {
-         name: "File Explorer",
-         path: "file-explorer",
-         description: "File Explorer",
-         image: "/assets/image/file-explorer.jpg",
-      }
    ],
    "App": [
       {
@@ -79,6 +43,6 @@ export const LabPageList: {[key: string]: TLabPage[]} = {
          path: "aim-training",
          description: "Aim Trainer",
          image: "/assets/image/aim.jpg",
-      }
+      },
    ]
 };
