@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Introduction from '@/components/homePage/Introduction';
 
 const inter = Inter({ subsets: ['latin'] });
-const styles = "flex h-screen px-4 py-8 gap-4 bg-gray-50 sm:flex-col xs:flex-col";
+const styles = "flex h-screen px-4 py-8 gap-6 bg-gray-50 sm:flex-col xs:flex-col";
 
 export const metadata = {
   title: 'My Component Laboratory',
