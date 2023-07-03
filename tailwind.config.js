@@ -27,11 +27,16 @@ module.exports = {
         'fade-in': {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 }
-        }
+        },
+        'loop-x': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)'}
+        },
       },
       animation: {
         'rise': 'rise 1s ease-in-out',
-        'fade-in': 'fade-in 1.5s ease-in'
+        'fade-in': 'fade-in 1.5s ease-in',
+        'loop-x': 'loop-x 2s linear infinite'
       }
     }
   },

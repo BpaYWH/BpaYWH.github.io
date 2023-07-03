@@ -18,6 +18,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + " " + styles}>
+        <h1 className="absolute top-[10%] left-[5%] text-9xl font-bold text-gray-300">
+          Code
+        </h1>
+        <h1 className="absolute bottom-[12%] left-[28%] text-9xl font-bold text-gray-300">
+          Create
+        </h1>
+        <h1 className="absolute top-[28%] right-[8%] text-9xl font-bold text-gray-300">
+          Inspire
+        </h1>
+
+
         <Introduction />
         {children}
       </body>
