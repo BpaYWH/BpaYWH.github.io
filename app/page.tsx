@@ -35,7 +35,7 @@ function Home() {
   }, []);
 
   return (
-    <div id="WorkDiv" className="relative basis-full flex flex-col justify-between px-4 pt-4 bg-white opacity-90 rounded-md shadow-lg overflow-y-scroll">
+    <>
       {
         showcase === "Lab" &&
         <Lab />
@@ -52,8 +52,7 @@ function Home() {
         <Switch leftButton="Lab" rightButton="Work" showcase={showcase} setShowcase={setShowcase} />
         <div className="h-4 bg-white" />
       </div>
-      
-    </div>
+    </>
   )
 }
 

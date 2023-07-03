@@ -34,8 +34,6 @@ function Introduction() {
                <p>Web Developer</p>
                <p>Unleashing Creativity through Web Development</p>
             </div>
-            
-            
 
             <div id="footer" className="flex justify-between gap-8">
                <div>

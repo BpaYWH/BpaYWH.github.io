@@ -37,8 +37,8 @@ const myFiles: FileStructure = {
 export default function FileExplorerPage() {
    return (
     <div>
-      <h1>File Explorer</h1>
-      <FileExplorer file={myFiles} />
+      <h1 className="text-3xl font-bold">File Explorer</h1>
+      <FileExplorer className="min-h-[500px] my-8 px-4 py-2 border rounded-md" file={myFiles} />
     </div>
   );
 
