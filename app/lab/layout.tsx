@@ -6,7 +6,7 @@ type Props = {
 
 function LabLayout({children}: Props) {
   return (
-      <div>
+      <div id="wrapperDiv">
          <div className="w-fit mb-8 rounded-md shadow transition-all duration-400 hover:scale-110 hover:bg-gray-100">
             <Link href="/" className="px-4">
                ← Back

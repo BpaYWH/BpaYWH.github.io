@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import Introduction from '@/components/homePage/Introduction';
 
 const inter = Inter({ subsets: ['latin'] });
-const styles = "flex w-screen h-screen px-4 py-8 gap-6 sm:flex-col xs:flex-col overflow-x-hidden fixed";
+const styles = "flex w-screen h-screen px-4 py-8 gap-6 sm:flex-col xs:flex-col overflow-x-hidden fixed font-nunito";
 
 export const metadata = {
   title: 'My Component Laboratory',
@@ -19,19 +19,21 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div id="wrapperDiv" className={inter.className + " " + styles} style={{backgroundImage: "url('/assets/image/background-global.PNG')", backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
-          <h1 className="absolute top-[10%] left-[5%] text-9xl font-bold text-gray-500 sm:text-7xl opacity-60">
-            Code
-          </h1>
-          <h1 className="absolute bottom-[12%] left-[28%] text-9xl font-bold text-gray-500 sm:text-7xl opacity-60">
-            Create
-          </h1>
-          <h1 className="absolute top-[28%] right-[8%] text-9xl font-bold text-gray-500 sm:text-7xl opacity-60">
-            Inspire
-          </h1>
+          <div id="bgDiv" className="font-caveat text-9xl font-bold text-gray-500 sm:text-7xl opacity-60">
+            <h1 className="absolute top-[10%] left-[5%]">
+              Code
+            </h1>
+            <h1 className="absolute bottom-[12%] left-[28%]">
+              Create
+            </h1>
+            <h1 className="absolute top-[28%] right-[8%]">
+              Inspire
+            </h1>
+          </div>
 
           <Introduction />
           
-          <div id="WorkDiv" className="relative basis-full flex flex-col justify-between px-4 pt-4 bg-white bg-opacity-90 rounded-md shadow-lg overflow-y-scroll">
+          <div id="WorkDiv" className="relative basis-full flex flex-col justify-between px-8 pt-8 bg-white bg-opacity-90 rounded-md shadow-lg overflow-y-scroll overflow-x-hidden">
             {children}
           </div>
         </div>

@@ -37,7 +37,11 @@ module.exports = {
         'rise': 'rise 1s ease-in-out',
         'fade-in': 'fade-in 1.5s ease-in',
         'loop-x': 'loop-x 2s linear infinite'
-      }
+      },
+      fontFamily: {
+        'caveat': 'Caveat, cursive',
+        'nunito': 'Nunito, sans-serif',
+      },
     }
   },
   plugins: []
