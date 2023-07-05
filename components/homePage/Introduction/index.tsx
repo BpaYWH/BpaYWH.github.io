@@ -14,7 +14,7 @@ function Introduction() {
    }
 
    return (
-      <div className={`relative shadow h-full opacity-90 rounded-lg transition-color duration-1000 ${isCollapsed ? "w-6 bg-transparent sm:w-full sm:h-6" : "w-2/3 bg-white sm:w-full"}`}>
+      <div className={`relative shadow h-full bg-opacity-90 rounded-lg transition-color duration-1000 ${isCollapsed ? "w-6 bg-transparent sm:w-full sm:h-6" : "w-2/3 bg-white sm:w-full"}`}>
          <button 
          className={`sm:invisible absolute z-10 top-0 bottom-0 my-auto left-full w-6 h-16 bg-green-300 text-white rounded-md shadow-lg transition duration-400 hover:bg-green-500 focus:outline-none`}
          onClick={handleCollapseClick}
