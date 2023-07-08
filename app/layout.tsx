@@ -33,7 +33,7 @@ export default function RootLayout({
 
           <Introduction />
           
-          <div id="WorkDiv" className="relative basis-full flex flex-col justify-between px-8 pt-8 bg-white bg-opacity-90 rounded-md shadow-lg overflow-y-scroll overflow-x-hidden">
+          <div id="WorkDiv" className="relative basis-full h-full flex flex-col justify-between px-8 pt-8 bg-white bg-opacity-90 rounded-md shadow-lg overflow-y-scroll overflow-x-hidden">
             {children}
           </div>
         </div>
