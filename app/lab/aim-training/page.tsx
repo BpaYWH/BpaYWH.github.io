@@ -95,7 +95,7 @@ export default function AimTraining(): ReactElement {
         <div>
           <p>Score: {score}</p>
           <p>Accuracy: {accuracy}%</p>
-          {/* <Timer isCounting={isStarted} setIsCounting={setIsStarted} /> */}
+          <Timer counting={isStarted} setCounting={setIsStarted} />
         </div>
       </div>
       <div id="clickDiv" className="relative mt-8 w-full h-full border-2 border-gray-300 rounded-md" onClick={handleMissClick}>

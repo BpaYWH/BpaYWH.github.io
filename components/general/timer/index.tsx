@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 interface Props {
-   isCounting: boolean;
-   setIsCounting: (isCounting: boolean) => void;
+   counting: boolean;
+   setCounting: Dispatch<SetStateAction<boolean>>;
 }
 
 const clearTimer = (timer: NodeJS.Timer | null) => {
@@ -11,46 +11,33 @@ const clearTimer = (timer: NodeJS.Timer | null) => {
    }
 }
 
-function Timer({isCounting, setIsCounting}: Props) {
-   const [timer, setTimer] = useState<NodeJS.Timer | null>(null);
+function Timer({counting, setCounting}: Props) {
    const [time, setTime] = useState(30);
+   const currentTimer = useRef<NodeJS.Timer | null>(null);
 
    const refreshTimer = () => {
-      console.log(time)
-      if (time - 1 === 0) {
-         setIsCounting(false);
-         clearTimer(timer);
-         return;
-      }
-      setTime(time => time - 1);
+      setTime(time => {
+         if (time - 1 === 0)
+            setCounting(!counting);
+         return (time - 1);
+      });
    };
 
    useEffect(() => {
-      if (time === 0) {
-         setIsCounting(false);
-         clearTimer(timer);
+      if (counting) {
+         currentTimer.current = setInterval(refreshTimer, 100);
       }
       else {
-         if (!isCounting) {
-            clearTimer(timer);
-         }
-         else {
-            if (!timer) {
-               const newTimer = setInterval(() => {
-                  console.log(time);
-                  setTime(time - 1);
-               }, 500);
-               setTimer(newTimer);
-               setTime(30);
-            }
-         }
+         clearTimer(currentTimer.current);
+         setTime(30);
       }
+   }, [counting]);
 
+   useEffect(() => {
       return () => {
-         clearTimer(timer);
-      }
-      
-   }, [isCounting, time]);
+         clearTimer(currentTimer.current);
+      }  
+   }, []);
 
    return (
       <p>Time: {time}s</p>
