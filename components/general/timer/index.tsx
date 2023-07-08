@@ -25,7 +25,7 @@ function Timer({counting, setCounting}: Props) {
 
    useEffect(() => {
       if (counting) {
-         currentTimer.current = setInterval(refreshTimer, 100);
+         currentTimer.current = setInterval(refreshTimer, 1000);
       }
       else {
          clearTimer(currentTimer.current);

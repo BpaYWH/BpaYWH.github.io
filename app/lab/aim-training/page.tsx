@@ -17,8 +17,6 @@ function getRandomPosition(maxX: number, maxY: number): TPosition {
   };
 } 
 
-
-//TODO: add timer, score, accuracy
 export default function AimTraining(): ReactElement { 
   const [container, setContainer] = useState<HTMLElement | null>(null);
   const [position, setPosition] = useState<TPosition>({x: 0, y: 0});
@@ -87,15 +85,19 @@ export default function AimTraining(): ReactElement {
   return (
     <div className="mt-4 px-8 my-4 w-full h-full">
       <div className="flex justify-between">
-        <button className="px-4 py-2 bg-cyan-600 text-white rounded-md shadow-md transition-color duration-300 hover:bg-cyan-500 hover:shadow-xl hover:scale-105" onClick={handleToggleAim}>
+        <button className={`px-4 py-2 ${isStarted ? "bg-gray-600 hover:bg-gray-500" : "bg-cyan-600 hover:bg-cyan-500"} text-white rounded-md shadow-md transition-color duration-300 hover:shadow-xl hover:scale-105`} onClick={handleToggleAim}>
           {
             isStarted ? "Stop" : "Start"
           }
         </button>
+
+        <div className="flex items-center">
+          <Timer counting={isStarted} setCounting={setIsStarted} />
+        </div>
+
         <div>
           <p>Score: {score}</p>
           <p>Accuracy: {accuracy}%</p>
-          <Timer counting={isStarted} setCounting={setIsStarted} />
         </div>
       </div>
       <div id="clickDiv" className="relative mt-8 w-full h-full border-2 border-gray-300 rounded-md" onClick={handleMissClick}>
