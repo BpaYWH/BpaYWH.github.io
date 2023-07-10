@@ -1,31 +1,40 @@
 import Link from "next/link";
-
+import Image from "next/image";
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
    description?: React.JSX.Element;
-   image?: string;
+   imagePath?: string;
    path?: string;
    title: string;
 }
 
-function Card({ className = "", description, image = "", path = "", title }: Props) {
-  return (
-   <div className={`w-[280px] transition duration-200 hover:scale-[1.01] hover:-translate-y-1 ${className}`}>
-      <figure className={`h-[280px] bg-cover bg-center rounded-lg transition duration-200 hover:shadow-lg`} style={{backgroundImage: `url('${image}')`}}>
+function Card({ description, imagePath = "", path = "", title}: Props) {
+
+   return (
+      <div className={`relative w-[480px] sm:w-[280px] md:w-[280px] lg:w-[300px] xl:w-[380px] 2xl:w[480px] rounded-lg transition duration-200 hover:shadow hover:scale-[1.01] hover:-translate-y-1`}>
          {
             path !== "" &&
-            <Link href={path} className="block h-full w-full p-4" />
+            <Link href={path} className="absolute z-10 top-0 left-0 w-full h-full" />
          }
-      </figure>
 
-      <div className="p-2">
-         <h1 className="text-2xl">
-            {title}
-         </h1>
+         <div className="relative rounded-lg w-[480px] h-[480px] sm:w-[280px] md:w-[280px] lg:w-[300px] xl:w-[380px] 2xl:w[480px] sm:h-[280px] md:h-[280px] lg:h-[300px] xl:h-[380px] 2xl:h[480px]">
+            <Image
+               alt=""
+               src={imagePath}
+               fill
+               sizes="100vw"
+               className="object-cover rounded-t-lg"
+            />
+         </div>
 
-         {description}
+         <div className="p-2">
+            <h1 className="text-2xl">
+               {title}
+            </h1>
+
+            {description}
+         </div>
       </div>
-   </div>
-  )
+   )
 }
 
 export default Card

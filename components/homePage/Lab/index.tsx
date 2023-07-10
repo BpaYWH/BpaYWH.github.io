@@ -15,11 +15,11 @@ function Lab() {
             path={`/lab/${path}`} 
             title={name} 
             description={
-               <figcaption className="text-md text-gray-400 whitespace-pre-wrap">
+               <p className="text-md text-gray-400 whitespace-pre-wrap">
                   {description} 
-               </figcaption>
+               </p>
             }
-            image={image} />
+            imagePath={image} />
          ))
       }
       </div>

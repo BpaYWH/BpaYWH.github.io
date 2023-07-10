@@ -1,3 +1,4 @@
+import Card from "@/components/general/card";
 
 type TLabPage = {
    name: string;
@@ -33,7 +34,7 @@ export const LabPageList: TLabPage[] = [
    },
 ];
 
-export const CameraSystemDescription = () => {
+const CameraSystemDescription = () => {
    return (
       <ul className="m-4 text-gray-400">
          <li>
@@ -49,7 +50,7 @@ export const CameraSystemDescription = () => {
    );
 }
 
-export const PerformanceAnalysisDescription = () => {
+const PerformanceAnalysisDescription = () => {
    return (
       <ul className="m-4 text-gray-400">
          <li>The system utilizes computer vision algorithms to detect and analyze the swimmer's body parts, including the arms and legs.</li>
@@ -59,7 +60,7 @@ export const PerformanceAnalysisDescription = () => {
    )
 }
 
-export const RecordReplayDescription = () => {
+const RecordReplayDescription = () => {
    return (
       <ul className="m-4 text-gray-400">
          <li>The analyzed information, including the swimmer's performance metrics, posture, and stroke analysis, can be displayed on a screen accessible to the user, such as a coach or the swimmer themselves.</li>
@@ -67,3 +68,40 @@ export const RecordReplayDescription = () => {
       </ul>
    )
 }
+
+const swimmerPerformanceDescription = [
+   {
+      title: "Camera",
+      description: CameraSystemDescription(),
+      image: "/assets/image/SwimmerPerformanceAnalysis-1.jpg"
+   },
+   {
+      title: "Performance Analysis",
+      description: PerformanceAnalysisDescription(),
+      image: "/assets/image/SwimmerPerformanceAnalysis-2.jpg"      
+   },
+   {
+      title: "Feedback",
+      description: RecordReplayDescription(),
+      image: "/assets/image/SwimmerPerformanceAnalysis-3.jpg"
+   }
+];
+
+export const SwimmerPerformanceDescriptionCards = swimmerPerformanceDescription.map((item) => (
+   <Card
+     title={item.title}
+     description={item.description}
+     imagePath={item.image}
+   />
+ ));
+
+ export const RehabIntro =
+ `A groundbreaking project in stroke rehabilitation: leveraging the power of AI. \n
+ Enabling personalized coaching and supervision of rehabilitation exercises. \n
+ Empowering patients to continue their recovery journey at home or in elderly centers.
+ `
+
+ export const RehabDescription = 
+ `Development of an AI-powered mobile app to facilitate community rehabilitation for stroke patients, enabling them to continue rehabilitation exercises at home or in elderly centers. \n
+Integration of posture analysis and artificial intelligence to provide coaching and supervision of rehabilitation exercises, promoting the use of AI and IT technology in stroke rehabilitation. \n
+`

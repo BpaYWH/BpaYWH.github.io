@@ -45,7 +45,7 @@ function Home() {
         <Work />
       }
 
-      <div id="SwitchDiv" className="sticky bottom-0 bg-transparent">
+      <div id="SwitchDiv" className="sticky bottom-0">
         <button title="Scroll to top" className={`absolute w-[40px] h-[40px] right-0 bottom-16 bg-green-400 text-white rounded-full p-2 transition duration-200 hover:scale-[1.1] hover:shadow-lg`} onClick={scrollToTop}>
           ▵
         </button>

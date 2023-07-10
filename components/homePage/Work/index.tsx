@@ -1,45 +1,45 @@
-import Card from "@/components/general/card";
+import Image from "next/image";
 
-import { CameraSystemDescription, PerformanceAnalysisDescription, RecordReplayDescription } from "@/utils/config";
+import Carousel3D from "@/components/general/carousel3D";
 
-function Work() {
+import { RehabIntro, RehabDescription, SwimmerPerformanceDescriptionCards } from "@/utils/config";
+
+function Work() {  
   return (
     <div id="WorkContent">
-      <h1 className="text-4xl mb-8">
+      <h1 className="text-4xl pb-4 border-b">
         Work
       </h1>
 
-
-      <div className="">
+      <div className="overflow-x-hidden">
         <div id="SwimmingPerformanceAnalysisSystem" className="mb-8">
           <div className="my-4">
             <h1 className="text-3xl mb-4">
               SWIMMER PERFORMANCE ANALYSIS SYSTEM
             </h1>
-            <p>
-              The Swimmer Performance Analysis System is a software-based system that allows for the analysis of swimmers' performance using computer vision technology. Unlike existing systems that require swimmers to wear customized devices, this system relies solely on ordinary cameras placed above and beneath the water. The system consists of three sub-systems: the camera system, posture analysis system, and feedback system.
-            </p>
+
+            <div className="my-8">
+              <p className="px-2 whitespace-pre-wrap text-gray-500">
+                Powered by computer vision AI
+              </p>
+
+              <p className="px-2 whitespace-pre-wrap text-gray-500">
+                {
+                  `
+                    No customized wear devices\n
+                    Relies solely on ordinary cameras placed above and beneath the water
+                  `
+                }
+              </p>
+              <p className="px-2 whitespace-pre-wrap text-gray-500 text-center">
+                Integration of three sub-systems: the camera system, posture analysis system, and feedback system
+              </p>
+            </div>
           </div>
-
-          <div className="flex gap-4">
-            <Card 
-            title="Carmera System" 
-            description={CameraSystemDescription()} 
-            image="/assets/image/SwimmerPerformanceAnalysis-1.jpg" 
-            className="xl:w-[500px] shadow rounded-xl"/>
-
-            <Card 
-            title="Performance Analysis" 
-            description={PerformanceAnalysisDescription()} 
-            image="/assets/image/SwimmerPerformanceAnalysis-2.jpg" 
-            className="xl:w-[500px] shadow rounded-xl"/>
-
-            <Card 
-            title="Record Replay" 
-            description={RecordReplayDescription()} 
-            image="/assets/image/SwimmerPerformanceAnalysis-3.jpg" 
-            className="xl:w-[500px] shadow rounded-xl"/>
+          <div className="h-[744px] sm:h-[660px] md:h-[660px] lg:h-[640px] xl:h-[660px]">
+            <Carousel3D data={SwimmerPerformanceDescriptionCards} />
           </div>
+              
         </div>
 
         <div id="SmartRehab" className="mb-8">
@@ -47,13 +47,38 @@ function Work() {
             <h1 className="text-3xl mb-4">
               Smart Rehab
             </h1>
-            <p>
-              Introduction
-            </p>
+
+            <div className="flex justify-between gap-4">
+              <p className="whitespace-pre-wrap ">
+                {RehabIntro}
+              </p>
+
+              <div className="relative rounded-lg min-w-[280px]">
+                <Image
+                  alt=""
+                  src="/assets/image/RehabSchedule.png"
+                  fill
+                  sizes="100vw"
+                  className="object-cover rounded-t-lg"
+                />
+              </div>
+            </div>
           </div>
 
-          <div>
-            Description
+          <div className="flex justify-between gap-4">
+            <p className="whitespace-pre-wrap ">
+              {RehabDescription}
+            </p>
+
+            <div className="relative rounded-lg min-w-[280px]">
+                <Image
+                  alt=""
+                  src="/assets/image/RehabStat.png"
+                  fill
+                  sizes="100vw"
+                  className="object-cover rounded-t-lg"
+                />
+              </div>
           </div>
         </div>
       </div>
