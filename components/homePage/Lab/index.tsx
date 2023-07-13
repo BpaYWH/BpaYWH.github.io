@@ -1,22 +1,21 @@
-import Card from "@/components/general/card";
+import WideCard from "@/components/general/wideCard";
 
 import { LabPageList } from "@/utils/config";
 
 function Lab() {
   return (
-   <div id="WorkContent">
-      <h1 className="mb-8 pb-8 text-4xl border-b border-gray-300">My Lab</h1>
-      <div id="WorkCard" className="flex flex-wrap justify-start gap-8">
+   <div id="WorkContent" className="p-4">
+      <div id="WorkCard" className="flex flex-col justify-start gap-8">
       {
          LabPageList.map(({name, path, description, image}, id) => (
-            <Card 
-            id="Card" 
+            <WideCard 
+            id="WideCard" 
             key={`${name}-${id}`} 
             path={`/lab/${path}`} 
             title={name} 
             description={
-               <p className="text-md text-gray-400 whitespace-pre-wrap">
-                  {description} 
+               <p className="text-md text-gray-500 whitespace-pre-wrap">
+                  {description}
                </p>
             }
             imagePath={image} />

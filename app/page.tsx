@@ -9,7 +9,7 @@ import Switch from "@/components/general/switch";
 function Home() {
   const [container, setContainer] = useState<HTMLElement | null>(null);
 
-  const [showcase, setShowcase] = useState("Lab");
+  const [showcase, setShowcase] = useState("Work");
 
   const scrollToTop = () => {
     if (!container) {
@@ -20,7 +20,6 @@ function Home() {
       top: 0,
       behavior: "smooth"
     });
-
   };
 
   useEffect(() => {
@@ -45,12 +44,11 @@ function Home() {
         <Work />
       }
 
-      <div id="SwitchDiv" className="sticky bottom-0">
+      <div id="SwitchDiv" className="sticky bottom-4 border rounded-full shadow-md">
         <button title="Scroll to top" className={`absolute w-[40px] h-[40px] right-0 bottom-16 bg-green-400 text-white rounded-full p-2 transition duration-200 hover:scale-[1.1] hover:shadow-lg`} onClick={scrollToTop}>
           ▵
         </button>
-        <Switch leftButton="Lab" rightButton="Work" showcase={showcase} setShowcase={setShowcase} />
-        <div className="h-4 bg-white" />
+        <Switch leftButton="Work" rightButton="Lab" showcase={showcase} setShowcase={setShowcase} />
       </div>
     </>
   )
