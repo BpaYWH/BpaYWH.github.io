@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Introduction from '@/components/homePage/Introduction';
 
 const inter = Inter({ subsets: ['latin'] });
-const styles = "flex w-screen h-screen px-4 py-8 gap-6 sm:flex-col xs:flex-col overflow-x-hidden fixed font-nunito";
+const styles = "flex w-screen h-screen px-4 py-8 gap-6 md:flex-col xs:flex-col  fixed font-nunito";
 
 export const metadata = {
   title: 'My Component Laboratory',
@@ -28,7 +28,7 @@ export default function RootLayout({
             sizes="100vw"
             className="object-cover opacity-30"
           />
-          <div id="bgDiv" className="font-caveat text-9xl font-bold text-gray-500 sm:text-7xl opacity-60">
+          <div id="bgDiv" className="font-caveat text-9xl font-bold text-gray-500 md:text-7xl opacity-60">
             <h1 className="absolute top-[10%] left-[5%]">
               Code
             </h1>

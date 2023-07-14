@@ -4,8 +4,12 @@ import { LabPageList } from "@/utils/config";
 
 function Lab() {
   return (
-   <div id="WorkContent" className="p-4">
-      <div id="WorkCard" className="flex flex-col justify-start gap-8">
+   <div id="WorkContent" className="py-4 px-32 mb-8 sm:px-4 md:px-16">
+      <h1 className="text-4xl pb-2 border-b sm:text-3xl">
+        Lab
+      </h1>
+
+      <div id="WorkCard" className="flex flex-col justify-start gap-16 mt-8 sm:gap-8">
       {
          LabPageList.map(({name, path, description, image}, id) => (
             <WideCard 

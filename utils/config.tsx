@@ -1,13 +1,13 @@
 import Card from "@/components/general/card";
 
-type TLabPage = {
+type TPage = {
    name: string;
    path: string;
    description?: string;
    image?: string;
 };
 
-export const LabPageList: TLabPage[] = [
+export const LabPageList: TPage[] = [
    {
       name: "File Explorer",
       path: "file-explorer",
@@ -34,17 +34,42 @@ export const LabPageList: TLabPage[] = [
    },
 ];
 
+export const WorkPageList: TPage[] = [
+   {
+      name: "Swimmer Performance Analysis",
+      path: "swimmer-performance-analysis",
+      description: "A patented system that analyzes the performance of a swimmer",
+      image: "/assets/image/Swimmer-Performance-Analysis/Thumbnail.png"
+   },
+   {
+      name: "Smart Rehab",
+      path: "smart-rehab",
+      description: "Remote rehabilitation assistant ",
+      image: "/assets/image/Rehab/Rehab-Thumbnail.jpeg"
+   },
+   {
+      name: "Robocoach",
+      path: "robocoach",
+      description: "Remote excercise coach",
+      image: "/assets/image/Robocoach/Robocoach-Thumbnail.png"
+   }
+];
+
+export const techStacksList = [
+
+];
+
 const CameraSystemDescription = () => {
    return (
       <ul className="m-4 text-gray-500">
          <li>
-            Multiple cameras, are installed on the ceiling of the pool area to monitor an entire swimming lane.
+            Multiple ceiling cameras monitor an entire swimming lane
          </li>
          <li>
-            These cameras capture images of the swimmer's movements and positions throughout the swim.
+            Capture the swimmer's movement throughout the swim
          </li>
          <li>
-            The images are processed and analyzed by the system to determine the swimmer's speed, acceleration, and other performance metrics.
+            Feed the image stream to the analysis system
          </li>
       </ul>
    );
@@ -53,9 +78,15 @@ const CameraSystemDescription = () => {
 const PerformanceAnalysisDescription = () => {
    return (
       <ul className="m-4 text-gray-500">
-         <li>The system utilizes computer vision algorithms to detect and analyze the swimmer's body parts, including the arms and legs.</li>
-         <li>By tracking the swimmer's poses and angles during different stages of the swim, the system can classify the swimmer's swimming style (e.g., breaststroke, butterfly stroke) and evaluate their posture.</li>
-         <li>The analysis includes calculations of speed, angle, and distance between body parts.</li>
+         <li>
+            Utilizes computer vision algorithms to detect and analyze the swimmer's body parts
+         </li>
+         <li>
+            By tracking the swimmer's poses and angles, the system can evaluate their posture
+         </li>
+         <li>
+            The analysis includes calculations of speed, angle, and distance between body parts
+         </li>
       </ul>
    )
 }
@@ -63,8 +94,10 @@ const PerformanceAnalysisDescription = () => {
 const RecordReplayDescription = () => {
    return (
       <ul className="m-4 text-gray-500">
-         <li>The analyzed information, including the swimmer's performance metrics, posture, and stroke analysis, can be displayed on a screen accessible to the user, such as a coach or the swimmer themselves.</li>
-         <li>This feedback helps swimmers understand their performance, identify areas for improvement, and make adjustments to their technique.</li>
+         <li>
+            The swimmer's performance metrics, posture, and stroke analysis are displayed on a screen accessible to the user
+         </li>
+         <li>Help swimmers understand their performance, identify areas for improvement, and make adjustments to their technique.</li>
       </ul>
    )
 }
@@ -73,17 +106,17 @@ const swimmerPerformanceDescription = [
    {
       title: "Camera",
       description: CameraSystemDescription(),
-      image: "/assets/image/SwimmerPerformanceAnalysis-1.jpg"
+      image: "/assets/image/Swimmer-Performance-Analysis/Description-1.jpeg"
    },
    {
       title: "Performance Analysis",
       description: PerformanceAnalysisDescription(),
-      image: "/assets/image/SwimmerPerformanceAnalysis-2.jpg"      
+      image: "/assets/image/Swimmer-Performance-Analysis/Description-2.jpeg"      
    },
    {
       title: "Feedback",
       description: RecordReplayDescription(),
-      image: "/assets/image/SwimmerPerformanceAnalysis-3.jpg"
+      image: "/assets/image/Swimmer-Performance-Analysis/Description-3.jpeg"
    }
 ];
 

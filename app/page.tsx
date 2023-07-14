@@ -9,7 +9,7 @@ import Switch from "@/components/general/switch";
 function Home() {
   const [container, setContainer] = useState<HTMLElement | null>(null);
 
-  const [showcase, setShowcase] = useState("Work");
+  const [showcase, setShowcase] = useState("Project");
 
   const scrollToTop = () => {
     if (!container) {
@@ -40,7 +40,7 @@ function Home() {
         <Lab />
       }
       {
-        showcase === "Work" &&
+        showcase === "Project" &&
         <Work />
       }
 
@@ -48,7 +48,7 @@ function Home() {
         <button title="Scroll to top" className={`absolute w-[40px] h-[40px] right-0 bottom-16 bg-green-400 text-white rounded-full p-2 transition duration-200 hover:scale-[1.1] hover:shadow-lg`} onClick={scrollToTop}>
           ▵
         </button>
-        <Switch leftButton="Work" rightButton="Lab" showcase={showcase} setShowcase={setShowcase} />
+        <Switch leftButton="Project" rightButton="Lab" showcase={showcase} setShowcase={setShowcase} />
       </div>
     </>
   )

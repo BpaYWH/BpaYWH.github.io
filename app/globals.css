@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
  
+@layer utilities {
+  .clip-path-inset-full {
+    clip-path: inset(100%);
+  }
+}
+
 ul, ol, menu {
   list-style-type: disc;
   
