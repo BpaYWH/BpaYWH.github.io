@@ -14,18 +14,22 @@ function Carousel3D({ className, data, ...props  }: Props) {
    }
 
    return (
-      <div className="relative">
-         {
-            data.map((item, index) => (
-               <div 
-               key={index} 
-               className={`absolute left-0 right-0 mx-auto w-fit transition-all duration-200 ${index === currentId ? 'opacity-100' : 'opacity-30 scale-75'} ${(index + 1) % data.length === currentId && "translate-x-[95%]"} ${(index - 1 + data.length) % data.length === currentId && "-translate-x-[95%]"}`}
-               onClick={() => {handleClick(index)}}
-               >
-                  {item}
-               </div>
-            ))
-         }
+      <div className="overflow-x-hidden">
+
+         <div className="flex justify-center">
+            {
+               data.map((item, index) => (
+                  <div 
+                  key={index} 
+                  // className={`mx-auto w-fit transition-all duration-200 ${index === currentId ? 'opacity-100' : 'opacity-30 scale-75'} ${(index + 1) % data.length === currentId && "translate-x-[95%]"} ${(index - 1 + data.length) % data.length === currentId && "-translate-x-[95%]"}`}
+                  className={`mx-auto w-fit transition-all duration-200 ${index === currentId ? 'opacity-100' : 'opacity-30 scale-75'} ${(index + 1) % data.length === currentId && ""} ${(index - 1 + data.length) % data.length === currentId && ""}`}
+                  onClick={() => {handleClick(index)}}
+                  >
+                     {item}
+                  </div>
+               ))
+            }
+         </div>
       </div>
    )
 }

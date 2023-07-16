@@ -1,71 +1,53 @@
 "use client"
 
-import { useState } from "react";
-
 import Image from "next/image";
 
 import Clock from "@/components/general/clock";
 
-import { techStacksList } from "@/utils/config";
+const responsiveSize = "h-[240px] w-[240px] sm:md:h-[120px] sm:md:w-[120px] lg:h-[240px] lg:w-[240px] xl:2xl:h-[320px] xl:2xl:w-[320px]";
+
+const buttonBaseStyle = "px-8 py-4 rounded-l-full border-l-2 border-t-2 border-black drop-shadow text-4xl ";
+const buttonHoverStyle = "hover:border-gray-400 hover:border-t-0 hover:border-b-2 hover:text-gray-600 transition-all duration-100";
+const buttonResponsiveStyle = "sm:text-lg md:xl lg:xl:text-2xl xl:text-3xl 2-xl:text-4xl";
 
 function Introduction() {
-   const [isCollapsed, setIsCollapsed] = useState(false);
-
-   const handleCollapseClick = () => {
-      setIsCollapsed(!isCollapsed);
-   }
-
    return (
-      <div className={`relative shadow h-full pt-4 px-4 bg-opacity-90 rounded-lg transition-color duration-1000 ${isCollapsed ? "w-6 bg-transparent md:w-full md:h-6" : "w-1/2 bg-white md:w-full"}`}>
-         <div className={`flex flex-col justify-between p-16 h-full md:p-4 transition-all duration-500 overflow-hidden ${isCollapsed ? "opacity-0" : "opacity-1"}`}>
-            <div id="introduction" className="opacity-80">
-               <h1 className="mb-4 md:mb-2 text-6xl md:text-4xl">Henry Yau</h1>
-               <h3 className="text-xl md:text-lg">Full Stack Web Developer</h3>
-               <p className="text-md md:text-sm text-gray-400">Unleashing Creativity through Web Development</p>
-            </div>
+      <div className="overflow-hidden">
+         <div className="absolute top-1/3 left-[50%]">
+            <div className="relative left-[-50%]">
+               <div className={`relative ${responsiveSize} mx-auto`}>
+                  <Image
+                  src="/assets/image/my-face.PNG"
+                  alt="This is me"
+                  fill
+                  sizes="100vw"
+                  className="object-cover rounded-lg"
+                  />
+               </div>
 
-            <div id="skill" className="pt-4 border-t">
-               <h3 className="text-xl md:text-lg">Tech Stacks</h3>
-               {
-                  techStacksList.map(item => (
-                     <div>
-                        Hi
-                     </div>
-                  ))
-               }
-            </div>
+               <h1 className="mt-8 text-4xl md:text-4xl text-center">Henry Yau</h1>
+               <h3 className="mt-8 text-xl md:text-lg">Full Stack Web Developer</h3>
+               <p className="mt-4 text-md md:text-sm text-gray-400">Unleashing Creativity through Web Development</p>
 
-            <div id="footer" className="flex justify-between">
-               <Clock />
-
-               <div className="flex gap-4 self-center">
-                  <a href="mailto: henryyaubpa@gmail.com" title="Email" className="transition hover:scale-110">
-                     <Image src="/assets/image/icon/mail.png" alt="Email"  width={24} height={24} />
-                  </a>
-                  <a href="https://www.linkedin.com/in/winghong-yau-42282718a/" title="LinkedIn" className="transition hover:scale-110" target="_blank" rel="noreferrer">
-                     <Image src="/assets/image/icon/In-Blue-48.png" alt="LinkedIn" width={24} height={24} />
-                  </a>
-                  <a href="https://github.com/BpaYWH" title="Github" className="transition hover:scale-110" target="_blank" rel="noreferrer">
-                     <Image src="/assets/image/icon/github-mark.svg" alt="Github" width={24} height={24} />
-                  </a>
+               <div className="mt-8 mx-auto left-0 right-0 w-fit">
+                  <Clock />
                </div>
             </div>
          </div>
 
-         <button 
-         title={`${isCollapsed ? "Expand" : "Collapse"}`}
-         className={`md:invisible absolute z-10 top-0 bottom-0 my-auto left-full w-6 h-16 bg-green-300 text-white rounded-md shadow-lg transition duration-400 hover:bg-green-500 focus:outline-none`}
-         onClick={handleCollapseClick}
-         >
-            {isCollapsed ? "▶︎" : "◀︎"}
-         </button>
-         <button 
-         title={`${isCollapsed ? "Expand" : "Collapse"}`}
-         className={`invisible md:visible absolute z-10 md:top-full md:left-0 md:right-0 md:mx-auto md:w-16 md:h-6 bg-gray-200 rounded-md bg-green-300 text-white shadow-lg focus:outline-none`}
-         onClick={handleCollapseClick}
-         >
-            {isCollapsed ? "▼" : "▲"}
-         </button>
+         <div className="absolute right-0 top-[30%]">
+            <div className="flex flex-col justify-between gap-24">
+               <button className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
+                  About
+               </button>
+               <button className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
+                  Project
+               </button>
+               <button className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
+                  Lab
+               </button>
+            </div>
+         </div>
       </div>
    )
 }

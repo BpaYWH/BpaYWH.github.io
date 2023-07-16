@@ -51,82 +51,83 @@ export const WorkPageList: TPage[] = [
       name: "Robocoach",
       path: "robocoach",
       description: "Remote excercise coach",
-      image: "/assets/image/Robocoach/Robocoach-Thumbnail.png"
+      image: "/assets/image/Robocoach/thumbnail.png"
    }
 ];
 
 export const techStacksList = [
-
+   "/assets/image/icon/javascript-color.svg",
+   "/assets/image/icon/typescript-color.svg",
+   "/assets/image/icon/react-color.svg",
+   "/assets/image/icon/nextdotjs-color.svg",
+   "/assets/image/icon/tailwindcss-color.svg",
+   "/assets/image/icon/html5-color.svg",
+   "/assets/image/icon/css3-color.svg",
+   "/assets/image/icon/amazonaws-color.svg",
 ];
 
-const CameraSystemDescription = () => {
+export const CameraSystemDescription = () => {
    return (
-      <ul className="m-4 text-gray-500">
-         <li>
-            Multiple ceiling cameras monitor an entire swimming lane
-         </li>
-         <li>
-            Capture the swimmer's movement throughout the swim
-         </li>
-         <li>
-            Feed the image stream to the analysis system
-         </li>
-      </ul>
+      <div>
+         <h3 className="text-4xl text-gray-500 mb-8">
+            Camera
+         </h3>
+
+         <div className="flex flex-col gap-4 text-gray-500 text-xl mx-4">
+            <p>
+               Multiple ceiling cameras monitor an entire swimming lane.
+            </p>
+            <p>
+               Capture the swimmer's movement throughout the swim.
+            </p>
+            <p>
+               Feed the image stream to the analysis system.
+            </p>
+         </div>
+      </div>
    );
 }
 
-const PerformanceAnalysisDescription = () => {
+export const PerformanceAnalysisDescription = () => {
    return (
-      <ul className="m-4 text-gray-500">
-         <li>
-            Utilizes computer vision algorithms to detect and analyze the swimmer's body parts
-         </li>
-         <li>
-            By tracking the swimmer's poses and angles, the system can evaluate their posture
-         </li>
-         <li>
-            The analysis includes calculations of speed, angle, and distance between body parts
-         </li>
-      </ul>
+      <div>
+         <h3 className="text-4xl text-gray-500 mb-8">
+            Performance Analysis
+         </h3>
+
+         <div className="flex flex-col gap-4 text-gray-500 text-xl mx-4">
+            <p>
+               Utilizes computer vision algorithms to detect and analyze the swimmer's body parts.
+            </p>
+            <p>
+               By tracking the swimmer's poses and angles, the system can evaluate their posture.
+            </p>
+            <p>
+               The analysis includes calculations of speed, angle, and distance between body parts.
+            </p>
+         </div>
+      </div>
    )
 }
 
-const RecordReplayDescription = () => {
+export const FeedbackDescription = () => {
    return (
-      <ul className="m-4 text-gray-500">
-         <li>
-            The swimmer's performance metrics, posture, and stroke analysis are displayed on a screen accessible to the user
-         </li>
-         <li>Help swimmers understand their performance, identify areas for improvement, and make adjustments to their technique.</li>
-      </ul>
+      <div>
+         <h3 className="text-4xl text-gray-500 mb-8">
+            Feedback
+         </h3>
+
+         <div className="flex flex-col gap-4 text-gray-500 text-xl mx-4">
+            <p>
+               The swimmer's performance metrics, posture, and stroke analysis are displayed on a screen accessible to the user
+            </p>
+            <p>
+               Help swimmers understand their performance, identify areas for improvement, and make adjustments to their technique
+            </p>
+         </div>
+      </div>
    )
 }
-
-const swimmerPerformanceDescription = [
-   {
-      title: "Camera",
-      description: CameraSystemDescription(),
-      image: "/assets/image/Swimmer-Performance-Analysis/Description-1.jpeg"
-   },
-   {
-      title: "Performance Analysis",
-      description: PerformanceAnalysisDescription(),
-      image: "/assets/image/Swimmer-Performance-Analysis/Description-2.jpeg"      
-   },
-   {
-      title: "Feedback",
-      description: RecordReplayDescription(),
-      image: "/assets/image/Swimmer-Performance-Analysis/Description-3.jpeg"
-   }
-];
-
-export const SwimmerPerformanceDescriptionCards = swimmerPerformanceDescription.map((item) => (
-   <Card
-     title={item.title}
-     description={item.description}
-     imagePath={item.image}
-   />
- ));
 
  export const RehabIntro =
  `A groundbreaking project in stroke rehabilitation: leveraging the power of AI. \n
@@ -135,4 +136,5 @@ export const SwimmerPerformanceDescriptionCards = swimmerPerformanceDescription.
  `
 
  export const RehabDescription = 
- `Integration of web technologies to provide coaching and supervision of rehabilitation exercises, promoting the use of AI and IT technology in stroke rehabilitation.`
+ `Integration of web technologies to provide coaching and supervision of rehabilitation exercises, 
+ promoting the use of AI and IT technology in stroke rehabilitation.`

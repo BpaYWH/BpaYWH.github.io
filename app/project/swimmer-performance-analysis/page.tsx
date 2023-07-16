@@ -1,37 +1,77 @@
-import Carousel3D from "@/components/general/carousel3D";
+import Image from "next/image";
 
-import { SwimmerPerformanceDescriptionCards } from "@/utils/config";
+import { CameraSystemDescription, PerformanceAnalysisDescription, FeedbackDescription } from "@/utils/config";
 
 function SwimmerPerformanceAnalysis() {
   return (
-   <div id="SwimmingPerformanceAnalysisSystem" className="mb-8">
-      <div className="my-4">
-      <h1 className="text-3xl mb-4">
-         SWIMMER PERFORMANCE ANALYSIS SYSTEM
-      </h1>
+   <div id="SwimmingPerformanceAnalysisSystem" className="flex flex-col justify-between gap-16 pb-8">
+      <div className="my-4 flex flex-col gap-16 px-12 mt-8">
+         <h1 className="text-6xl mb-4">
+            SWIMMER PERFORMANCE ANALYSIS SYSTEM
+         </h1>
 
-      <div className="my-8">
-         <p className="px-2 whitespace-pre-wrap text-gray-500">
-            Powered by computer vision AI
-         </p>
+         <div>
+            <p className="px-2 whitespace-pre-wrap text-gray-500">
+               Powered by computer vision AI
+            </p>
 
-         <p className="px-2 whitespace-pre-wrap text-gray-500">
-            {
-            `
-               No customized wear devices\n
+            <p className="px-2 whitespace-pre-wrap text-gray-500">
+               No customized wear devices
+            </p>
+
+            <p className="px-2 whitespace-pre-wrap text-gray-500">
                Relies solely on ordinary cameras placed above and beneath the water
-            `
-            }
-         </p>
-         <p className="px-2 whitespace-pre-wrap text-gray-500 text-center">
-            Integration of three sub-systems: the camera system, posture analysis system, and feedback system
-         </p>
-      </div>
+            </p>
+
+            <p className="px-2 whitespace-pre-wrap text-gray-500">
+               Integration of three sub-systems: the camera system, posture analysis system, and feedback system
+            </p>
+         </div>
 
       </div>
-      <div className="h-[744px] sm:h-[660px] md:h-[660px] lg:h-[640px] xl:h-[660px]">
-         <Carousel3D data={SwimmerPerformanceDescriptionCards} />
+
+      <div className="flex flex-col gap-32 px-24">
+         <div className="flex justify-center gap-16">
+            {
+               CameraSystemDescription()
+            }
+            <Image
+            src="/assets/image/Swimmer-Performance-Analysis/Description-1.jpeg" 
+            alt="Camera System" 
+            width={480}
+            height={360}
+            className="object-cover"
+            />
+         </div>
+
+         <div className="flex justify-center gap-16">
+            <Image
+            src="/assets/image/Swimmer-Performance-Analysis/Description-2.jpeg" 
+            alt="Camera System" 
+            width={480}
+            height={360}
+            className="object-cover"
+            />
+            {
+               PerformanceAnalysisDescription()
+            }
+         </div>
+
+         <div className="flex justify-center gap-16">
+            {
+               FeedbackDescription()
+            }
+            <Image
+            src="/assets/image/Swimmer-Performance-Analysis/Description-3.jpeg" 
+            alt="Camera System" 
+            width={360}
+            height={260}
+            className="object-cover"
+            />
+         </div>
+
       </div>
+      
 
       <div id="RefVideos">
         <h1 className="text-3xl mb-4">

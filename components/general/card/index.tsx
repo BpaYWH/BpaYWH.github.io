@@ -12,9 +12,9 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
    title: string;
 }
 
-const responsiveWidth = "sm:w-[200px] md:w-[240px] lg:w-[280px] xl:w-[320px] 2xl:w[400px]";
-const responsiveHeight = "sm:h-[150px] md:h-[180px] lg:h-[210px] xl:h-[240px] 2xl:h[300px]";
-const defaultWidth = "w-[400px]";
+const responsiveWidth = "sm:w-[200px] md:w-[240px] lg:w-[320px] xl:w-[400px] 2xl:w[480px]";
+const responsiveHeight = "sm:h-[150px] md:h-[180px] lg:h-[210px] xl:h-[300px] 2xl:h[360px]";
+const defaultWidth = "w-[560px]";
 
 function Card({ description, imagePath = "", path = "", title}: Props) {
    const [isMouseOver, setIsMouseOver] = useState(false)
@@ -31,7 +31,7 @@ function Card({ description, imagePath = "", path = "", title}: Props) {
             <Link href={path} className="absolute z-10 top-0 left-0 w-full h-full" />
          }
 
-         <div className={`relative ${defaultWidth} h-[280px] ${responsiveWidth} ${responsiveHeight}  shadow-lg`}>
+         <div className={`relative ${defaultWidth} h-[420px] ${responsiveWidth} ${responsiveHeight}  shadow-lg`}>
             <Image
                alt=""
                src={imagePath}

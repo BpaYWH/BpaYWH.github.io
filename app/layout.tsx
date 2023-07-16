@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Introduction from '@/components/homePage/Introduction';
 
 const inter = Inter({ subsets: ['latin'] });
-const styles = "flex w-screen h-screen px-4 py-8 gap-6 md:flex-col xs:flex-col  fixed font-nunito";
+const styles = "w-screen h-screen overflow-hidden font-nunito";
 
 export const metadata = {
   title: 'My Component Laboratory',
@@ -22,13 +22,13 @@ export default function RootLayout({
       <body>
         <div id="wrapperDiv" className={inter.className + " " + styles}>
           <Image
-            src="/assets/image/background-global.PNG"
-            alt="Global Background"
-            fill
-            sizes="100vw"
-            className="object-cover opacity-30"
+          src="/assets/image/background-global.PNG"
+          alt="Global Background"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-20"
           />
-          <div id="bgDiv" className="font-caveat text-9xl font-bold text-gray-500 md:text-7xl opacity-60">
+          <div id="bgDiv" className="font-caveat text-9xl font-bold text-gray-500 md:text-7xl opacity-10">
             <h1 className="absolute top-[10%] left-[5%]">
               Code
             </h1>
@@ -39,12 +39,13 @@ export default function RootLayout({
               Inspire
             </h1>
           </div>
-
+          
           <Introduction />
           
-          <div id="WorkDiv" className="relative basis-full h-full flex flex-col justify-between px-8 pt-8 bg-white bg-opacity-90 rounded-md shadow-lg overflow-y-scroll">
+{/* 
+          <div id="WorkDiv" className="relative basis-full h-full flex flex-col justify-between bg-white bg-opacity-90 rounded-md shadow-lg overflow-y-scroll">
             {children}
-          </div>
+          </div> */}
         </div>
       </body>
     </html>
