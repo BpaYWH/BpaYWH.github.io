@@ -34,7 +34,7 @@ export const LabPageList: TPage[] = [
    },
 ];
 
-export const WorkPageList: TPage[] = [
+export const ProjectPageList: TPage[] = [
    {
       name: "Swimmer Performance Analysis",
       path: "swimmer-performance-analysis",

@@ -8,11 +8,16 @@ function Lab() {
       <h1 className="text-4xl pb-2 border-b sm:text-3xl">
         Lab
       </h1>
+      <a href="/" className="">
+         <button>
+            X
+         </button>
+      </a>
 
       <div id="WorkCard" className="flex flex-col justify-start gap-16 mt-8 sm:gap-8">
       {
          LabPageList.map(({name, path, description, image}, id) => (
-            <WideCard 
+            <WideCard
             id="WideCard" 
             key={`${name}-${id}`} 
             path={`/lab/${path}`} 

@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import Link from "next/link";
 
 import Clock from "@/components/general/clock";
 
@@ -11,6 +12,7 @@ const buttonHoverStyle = "hover:border-gray-400 hover:border-t-0 hover:border-b-
 const buttonResponsiveStyle = "sm:text-lg md:xl lg:xl:text-2xl xl:text-3xl 2-xl:text-4xl";
 
 function Introduction() {
+
    return (
       <div className="overflow-hidden">
          <div className="absolute top-1/3 left-[50%]">
@@ -26,7 +28,7 @@ function Introduction() {
                </div>
 
                <h1 className="mt-8 text-4xl md:text-4xl text-center">Henry Yau</h1>
-               <h3 className="mt-8 text-xl md:text-lg">Full Stack Web Developer</h3>
+               <h3 className="mt-8 text-xl md:text-lg">Full Stack Developer</h3>
                <p className="mt-4 text-md md:text-sm text-gray-400">Unleashing Creativity through Web Development</p>
 
                <div className="mt-8 mx-auto left-0 right-0 w-fit">
@@ -37,15 +39,21 @@ function Introduction() {
 
          <div className="absolute right-0 top-[30%]">
             <div className="flex flex-col justify-between gap-24">
-               <button className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
-                  About
-               </button>
-               <button className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
-                  Project
-               </button>
-               <button className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
-                  Lab
-               </button>
+               <a href="/about" className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
+                  <button>
+                     About
+                  </button>
+               </a>
+               <a href="/project" className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
+                  <button>
+                     Project
+                  </button>
+               </a>
+               <a href="/lab" className={`${buttonBaseStyle} ${buttonHoverStyle} ${buttonResponsiveStyle}`}>
+                  <button>
+                     Lab
+                  </button>
+               </a>
             </div>
          </div>
       </div>

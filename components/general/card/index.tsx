@@ -41,7 +41,7 @@ function Card({ description, imagePath = "", path = "", title}: Props) {
             />
          </div>
 
-         <div className="p-4">
+         <div className="relative p-4">
             <h1 className="text-2xl border-b-2 pb-2">
                {title}
             </h1>
