@@ -1,11 +1,10 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
+
 import Image from 'next/image';
 
-import Introduction from '@/components/introduction';
-
 const inter = Inter({ subsets: ['latin'] });
-const styles = "w-screen h-screen overflow-hidden font-nunito";
+const styles = "font-nunito";
 
 export const metadata = {
   title: 'My Component Laboratory',
@@ -21,28 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div id="wrapper-div" className={inter.className + " " + styles}>
-          <Image
-          src="/assets/image/background-global.PNG"
-          alt="Global Background"
-          fill
-          sizes="100vw"
-          className="object-cover opacity-20"
-          />
-          <div id="global-background" className="font-caveat text-9xl font-bold text-gray-500 md:text-7xl opacity-10">
-            <h1 className="absolute top-[10%] left-[5%]">
-              Code
-            </h1>
-            <h1 className="absolute bottom-[12%] left-[28%]">
-              Create
-            </h1>
-            <h1 className="absolute top-[28%] right-[8%]">
-              Inspire
-            </h1>
-          </div>
-          
-          <Introduction />
-
-          <div id="content" className="relative">
+          <div id="content" className="">
             {children}
           </div>
         </div>

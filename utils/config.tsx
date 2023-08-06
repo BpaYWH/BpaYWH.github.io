@@ -1,10 +1,13 @@
-import Card from "@/components/general/card";
-
 type TPage = {
    name: string;
    path: string;
    description?: string;
    image?: string;
+};
+
+type TTech = {
+   name: string;
+   icon: string;
 };
 
 export const LabPageList: TPage[] = [
@@ -55,21 +58,45 @@ export const ProjectPageList: TPage[] = [
    }
 ];
 
-export const techStacksList = [
-   "/assets/image/icon/javascript-color.svg",
-   "/assets/image/icon/typescript-color.svg",
-   "/assets/image/icon/react-color.svg",
-   "/assets/image/icon/nextdotjs-color.svg",
-   "/assets/image/icon/tailwindcss-color.svg",
-   "/assets/image/icon/html5-color.svg",
-   "/assets/image/icon/css3-color.svg",
-   "/assets/image/icon/amazonaws-color.svg",
+export const techStacksList: TTech[] = [
+   {
+      name: "JavaScript",
+      icon: "/assets/image/icon/javascript-color.svg"
+   },
+   {
+      name: "TypeScript",
+      icon: "/assets/image/icon/typescript-color.svg"
+   },
+   {
+      name: "React",
+      icon: "/assets/image/icon/react-color.svg"
+   },
+   {
+      name: "Next.js",
+      icon: "/assets/image/icon/nextdotjs-color.svg"
+   },
+   {
+      name: "TailwindCSS",
+      icon: "/assets/image/icon/tailwindcss-color.svg"
+   },
+   {
+      name: "HTML5",
+      icon: "/assets/image/icon/html5-color.svg"
+   },
+   {
+      name: "CSS3",
+      icon: "/assets/image/icon/css3-color.svg"
+   },
+   {
+      name: "Amazon Web Service",
+      icon: "/assets/image/icon/amazonaws-color.svg"
+   }
 ];
 
 export const CameraSystemDescription = () => {
    return (
-      <div>
-         <h3 className="text-4xl text-gray-500 mb-8">
+      <div className="my-16 w-1/2 h-fit mx-auto">
+         <h3 className="text-2xl mb-8">
             Camera
          </h3>
 
@@ -90,8 +117,8 @@ export const CameraSystemDescription = () => {
 
 export const PerformanceAnalysisDescription = () => {
    return (
-      <div>
-         <h3 className="text-4xl text-gray-500 mb-8">
+      <div className="my-16 w-1/2 h-fit mx-auto">
+         <h3 className="text-2xl mb-8">
             Performance Analysis
          </h3>
 
@@ -112,8 +139,8 @@ export const PerformanceAnalysisDescription = () => {
 
 export const FeedbackDescription = () => {
    return (
-      <div>
-         <h3 className="text-4xl text-gray-500 mb-8">
+      <div className="my-16 w-1/2 h-fit mx-auto">
+         <h3 className="text-2xl mb-8">
             Feedback
          </h3>
 
@@ -129,12 +156,5 @@ export const FeedbackDescription = () => {
    )
 }
 
- export const RehabIntro =
- `A groundbreaking project in stroke rehabilitation: leveraging the power of AI. \n
- Enabling personalized coaching and supervision of rehabilitation exercises. \n
- Empowering patients to continue their recovery journey at home or in elderly centers.
- `
-
- export const RehabDescription = 
- `Integration of web technologies to provide coaching and supervision of rehabilitation exercises, 
- promoting the use of AI and IT technology in stroke rehabilitation.`
+export const RehabDescription = 
+ `Integration of web technologies to provide coaching and supervision of rehabilitation exercises, promoting the use of AI and IT technology in stroke rehabilitation.`

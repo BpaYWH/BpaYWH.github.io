@@ -12,7 +12,7 @@ const responsiveHeight = "sm:h-[280px] md:h-[280px] lg:h-[300px] xl:h-[440px] 2x
 function WideCard({ description, imagePath = "", path = "", title}: Props) {
 
    return (
-      <div className={`relative rounded-lg bg-gradient-to-r from-gray-100 to-gray-50 shadow transition duration-400 hover:scale-[101%] hover:shadow-md`}>
+      <div className={`rounded-lg bg-gradient-to-r from-gray-100 to-gray-50 shadow transition duration-400 hover:scale-[101%] hover:shadow-md`}>
          {
             path !== "" &&
             <Link href={path} className="absolute z-10 top-0 left-0 w-full h-full" />

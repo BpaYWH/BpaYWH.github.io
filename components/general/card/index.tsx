@@ -1,9 +1,5 @@
-"use client"
-
 import Link from "next/link";
 import Image from "next/image";
-
-import { useState } from "react";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
    description?: React.JSX.Element;
@@ -17,15 +13,9 @@ const responsiveHeight = "sm:h-[150px] md:h-[180px] lg:h-[210px] xl:h-[300px] 2x
 const defaultWidth = "w-[560px]";
 
 function Card({ description, imagePath = "", path = "", title}: Props) {
-   const [isMouseOver, setIsMouseOver] = useState(false)
-
-   const handleMouseOver = () => {
-      if(isMouseOver) return;
-      setIsMouseOver(true)
-   }
 
    return (
-      <div onMouseOver={handleMouseOver} onMouseOut={() => setIsMouseOver(false)} className={`relative rounded-lg bg-gray-50 shadow-md ${defaultWidth} ${responsiveWidth} ${responsiveHeight} rounded-lg transition duration-200 hover:shadow hover:scale-[1.01] hover:-translate-y-1 ${!isMouseOver && "disabled"}`}>
+      <div className={`rounded-lg bg-gray-50 shadow-md ${defaultWidth} ${responsiveWidth} ${responsiveHeight} rounded-lg transition duration-200 hover:shadow hover:scale-[1.01] hover:-translate-y-1`}>
          {
             path !== "" &&
             <Link href={path} className="absolute z-10 top-0 left-0 w-full h-full" />

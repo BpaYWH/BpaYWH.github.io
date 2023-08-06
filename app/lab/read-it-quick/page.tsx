@@ -14,7 +14,7 @@ function ReadItQuick() {
    }
 
   return (
-    <div>
+    <div className="px-8 py-8 bg-white">
       <h1 className="text-4xl">
          Read It Quick
       </h1>

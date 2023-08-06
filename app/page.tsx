@@ -1,9 +1,10 @@
+
+import Introduction from '@/components/introduction';
+
 function Home() {
 
    return (
-      <>
-         
-      </>
+      <Introduction />
    )
 }
 
