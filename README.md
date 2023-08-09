@@ -4,36 +4,4 @@
 ![Project Banner](/public/assets/image/banner.png)
 
 Welcome to my portfolio! This Next.js application showcases my skills in React.js, Tailwind CSS, and TypeScript.
-
-## Features
-
-### Previews
-
-## Getting Started
-
-### Prerequisites
-
-To run this project locally, you will need to have Node.js and npm (Node Package Manager) installed on your machine.
-
-### Installation
-
-1. Clone the repository:
-    
-    `git clone https://github.com/BpaYWH/my-lab.git`
-    
-2. Navigate to the project directory:
-    
-    `cd my-lab`
-    
-3. Install the dependencies:
-    
-    `npm install`
-    
-### Usage
-
-1. Start the development server:
-    
-    `npm run dev`
-    
-2. Open your browser and visit `http://localhost:3000` to see the app in action.
     
