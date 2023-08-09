@@ -12,7 +12,7 @@ function SwimmerPerformanceAnalysis() {
          </a>
          <div className="relative w-full h-auto aspect-[16/9]">
             <Image
-            src="/assets/image/Swimmer-Performance-Analysis/thumbnail.png" 
+            src="/assets/image/Swimmer-Performance-Analysis/Thumbnail.png" 
             alt="Camera System"
             fill
             className="object-cover"

@@ -74,7 +74,7 @@ function Robocoach() {
           </div>
 
           <div className="relative mx-auto w-4/5 h-auto aspect-video">
-            <Image src="/assets/image/Robocoach/robocoach-1.jpg" alt="" fill sizes="100vw" className="rounded-md " />
+            <Image src="/assets/image/Robocoach/robocoach-1.JPG" alt="" fill sizes="100vw" className="rounded-md " />
           </div>
         </div>
       </div>
