@@ -26,7 +26,7 @@ export default function FileExplorer({file, className} : Props) {
             {
                file.files && file.files.length > 0 &&
                file.files.map((nextFile) => (
-                  <li key={nextFile.filename} className={`pl-4 ${!isExpanded && 'hidden'}`}>
+                  <li key={nextFile.filename} className={`pl-4 ${!isExpanded && 'hidden'} list-none`}>
                      <FileExplorer file={nextFile} />
                   </li>
                ))

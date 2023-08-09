@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+@layer utilities {
+  .clip-path-inset-full {
+    clip-path: inset(100%);
+  }
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+ul, ol, menu {
+  list-style-type: disc;
+  
+}
