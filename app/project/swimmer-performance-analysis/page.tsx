@@ -2,10 +2,10 @@ import Image from "next/image";
 
 function SwimmerPerformanceAnalysis() {
   return (
-   <div id="SwimmingPerformanceAnalysisSystem" style={{ backgroundImage: `url("/assets/image/background-global-repeat-2.PNG")` }}>
+   <div id="SwimmingPerformanceAnalysisSystem" style={{ backgroundImage: `url("/assets/image/background-global-repeat-3.PNG")` }}>
       <div id="intro" className="relative">
          <a 
-         className="absolute top-4 left-4 px-4 py-2 sm:px-2 sm:py-0 rounded-md bg-slate-100 hover:bg-slate-300 shadow-md z-10"
+         className="absolute top-4 left-4 px-4 py-2 sm:px-2 sm:py-0 rounded-md bg-slate-100 hover:bg-slate-400 shadow-md z-10 hover:text-slate-100"
          href="/"
          >
             ←

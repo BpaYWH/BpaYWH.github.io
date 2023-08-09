@@ -2,9 +2,9 @@ import Image  from "next/image";
 
 function SmartRehab() {
   return (
-   <div id="smart-rehab" className="pt-4 pb-16 overflow-x-hidden" style={{ backgroundImage: `url("/assets/image/background-global-repeat-2.PNG")` }}>
+   <div id="smart-rehab" className="pt-4 pb-16 overflow-x-hidden" style={{ backgroundImage: `url("/assets/image/background-global-repeat-3.PNG")` }}>
       <div id="back" className="mx-4 my-8" >
-        <a href="/" className="px-4 py-2 rounded-md bg-slate-100 hover:bg-slate-300 shadow-md z-10">
+        <a href="/" className="px-4 py-2 rounded-md bg-slate-800 hover:bg-slate-400 shadow-md z-10 text-slate-100 hover:text-slate-800">
           ←
         </a>
       </div>
@@ -34,7 +34,7 @@ function SmartRehab() {
       <div id="block1" className="relative">
         <div className="flex flex-col justify-center w-4/5 sm:w-[95%] h-auto aspect-[5/1] bg-[#84CBBA] bg-opacity-75 rounded-md mx-auto">
           <div className="flex justify-end py-4 pr-6">
-            <p className="w-1/3 text-white text-xl sm:text-xs md:text-sm">
+            <p className="w-1/3 text-white text-xl sm:text-xs md:text-sm drop-shadow">
               Empowering patients to continue their recovery journey at home or in elderly centers.
             </p>
           </div>
@@ -73,7 +73,7 @@ function SmartRehab() {
 
       <div className="z-10 mx-auto p-4 w-4/5 h-auto aspect-[4/1] bg-[#84CBBA] bg-opacity-75 rounded-sm ">
         <div className="flex flex-col justify-center w-full h-full">
-          <p className="text-center text-white text-lg sm:text-xs md:text-md">
+          <p className="text-center text-white text-lg sm:text-xs md:text-md drop-shadow">
             Integration of web technologies to provide coaching and supervision of rehabilitation exercises, promoting the use of AI and IT technology in stroke rehabilitation.
           </p>
         </div>
