@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function SwimmerPerformanceAnalysis() {
   return (
-   <div id="SwimmingPerformanceAnalysisSystem"  className="text-lg" style={{ backgroundImage: `url("/assets/image/background-global-repeat-2.PNG")` }}>
+   <div id="SwimmingPerformanceAnalysisSystem" style={{ backgroundImage: `url("/assets/image/background-global-repeat-2.PNG")` }}>
       <div id="intro" className="relative">
          <a 
          className="absolute top-4 left-4 px-4 py-2 sm:px-2 sm:py-0 rounded-md bg-slate-100 hover:bg-slate-300 shadow-md z-10"
@@ -20,7 +20,7 @@ function SwimmerPerformanceAnalysis() {
          </div>
       </div>
 
-      <div id="block1" className="flex flex-col gap-4 my-16 px-2 py-8 w-full text-center mx-auto drop-shadow bg-slate-500 bg-opacity-50 whitespace-pre-wrap text-white sm:text-sm">
+      <div id="block1" className="flex flex-col gap-4 my-16 px-2 py-8 w-full text-center mx-auto drop-shadow bg-slate-500 bg-opacity-50 whitespace-pre-wrap text-white text-lg sm:text-sm">
          <p>Powered by computer vision AI</p>
          <p>No customized wear devices</p>
          <p>Relies solely on ordinary cameras placed above the water</p>

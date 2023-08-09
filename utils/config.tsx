@@ -35,6 +35,12 @@ export const LabPageList: TPage[] = [
       description: "Train your mouse control",
       image: "/assets/image/aim.jpg",
    },
+   // {
+   //    name: "Expenses",
+   //    path: "expenses",
+   //    description: "Track your expenses",
+   //    image: "",
+   // }
 ];
 
 export const ProjectPageList: TPage[] = [
@@ -92,6 +98,3 @@ export const techStacksList: TTech[] = [
       icon: "/assets/image/icon/amazonaws-color.svg"
    }
 ];
-
-export const RehabDescription = 
- `Integration of web technologies to provide coaching and supervision of rehabilitation exercises, promoting the use of AI and IT technology in stroke rehabilitation.`
