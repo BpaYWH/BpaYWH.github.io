@@ -55,7 +55,7 @@ function SmartRehab() {
             <div className="border-l-[4vw] border-[#84CBBA]">
               <div className="flex flex-col justify-center px-4 py-8 sm:px-2 sm:py-4 bg-white rounded-sm shadow-xl ">
                 <p className="text-lg sm:text-xs md:text-sm">
-                  Help swimmers understand their performance, identify areas for improvement, and make adjustments to their technique
+                  Help patients understand their recovery progress, identify areas for improvement, and make adjustments to their motions
                 </p>
               </div>
             </div>
