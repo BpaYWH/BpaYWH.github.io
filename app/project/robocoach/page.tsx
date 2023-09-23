@@ -24,12 +24,15 @@ function Robocoach() {
             </div>
 
             <div className="px-8 py-8 h-fit bg-white bg-opacity-80">
-              <p className="font-bold text-4xl sm:text-2xl xl:text-2xl drop-shadow">
-                Robocoach
-              </p>
+              <a href="https://www.hkuit.com/robocoach" className="underline text-sky-500 hover:text-sky-600" target="_blank" rel="noreferrer">
+                <p className="font-bold text-4xl sm:text-2xl xl:text-2xl drop-shadow hover:-translate-y-1">
+                  Robocoach
+                </p>
+              </a>
               <p className="text-2xl md:text-sm xl:text-lg">
                 AI-powered movement analysis and tracks progress, providing valuable insights for teachers and parents to monitor students' exercise habits
               </p>
+              
             </div>
           </div>
         </div>
