@@ -88,8 +88,8 @@ function Introduction() {
                </div>
 
                <h1 className="mt-8 text-4xl sm:text-2xl md:text-3xl xl:text-3xl text-center">Henry Yau</h1>
-               <h3 className="mt-8 text-xl sm:text-md md:text-lg xl:text-xl">Full Stack Developer</h3>
-               <p className="mt-4 text-md sm:text-sm md:text-sm text-gray-400">Unleashing Creativity through Web Development</p>
+               <h3 className="mt-8 text-xl sm:text-md md:text-lg xl:text-xl text-center">Full Stack Developer</h3>
+               {/* <p className="mt-4 text-md sm:text-sm md:text-sm text-gray-400">Unleashing Creativity through Web Development</p> */}
 
                <div className="mt-8 mx-auto left-0 right-0 w-fit">
                   <Clock />
