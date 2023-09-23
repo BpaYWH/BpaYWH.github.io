@@ -124,6 +124,15 @@ function SwimmerPerformanceAnalysis() {
          <iframe className="rounded-md w-1/2 h-auto aspect-video" src="https://www.youtube.com/embed/RL1oFDWdH3g" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
       </div>
 
+      <div id="block6" className="mt-16 bg-slate-100 bg-opacity-50 p-8">
+         <h3 className="text-2xl text-slate-800 drop-shadow">Mother Project: </h3>
+         <a href="https://www.hkuit.com/drowning-detection-system" target="_blank" rel="noreferrer" className="underline text-sky-500 hover:text-sky-600 shadow-lg">
+            <p>
+               Drowning Detection System
+            </p>
+         </a>
+      </div>
+
       <div id="bottom-nav" className="flex justify-between gap-[2px] mt-16 text-slate-50 text-bold text-center drop-shadow">
          <a href="/" className="w-full py-4 bg-slate-800 bg-opacity-80 hover:bg-opacity-60 transition duration-400 hover:-translate-y-1 ">Back to Home</a>
          <a href="#intro" className="w-full py-4 bg-slate-800 bg-opacity-80 hover:bg-opacity-60 transition duration-400 hover:-translate-y-1">Scroll to Top</a>
